@@ -8,17 +8,15 @@ const ingredients = [
 ];
 
 const list = document.querySelector("#ingredients");
-let liRef = document.createElement("li");
 
+list.append(...ingredients.map(ing => {
 
-ingredients.forEach(ing=>{
-
-  liRef = document.createElement("li");
+  let liRef = document.createElement("li");
   liRef.classList.add("item");
   liRef.textContent = ing;
+  return liRef;
+}));
 
-  list.append(liRef)
-
-});
 
 console.log(list);
+
